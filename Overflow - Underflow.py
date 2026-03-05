@@ -1,0 +1,35 @@
+#Parte 1: Limites del Overflow 
+import math 
+#Definimos un numero flotante x
+x = 1.0 
+ultimo_valor_valido1 = x #Aqui, guardamos el ultimo valor que no sea infinito 
+while not math.isinf(x):
+    ultimo_valor_valido1 = x #Guardamos el valor actual finito
+    x = x * 10 
+
+print("\nCalculo Overflow")
+print("El ultimo valor finito válido es ", ultimo_valor_valido1)
+print("El valor cuando ocurre el Overflow es ", x)
+
+#Parte 2: Limites del Underflow 
+#Definimos nuevamente un numero flotante y
+y = 1.0
+ultimo_valor_valido2 = y #Aqui, guardamos el ultimo valor que no sea igual 0 
+while y != 0.0: 
+    ultimo_valor_valido2 = y #Guardamos el valor actual finito
+    y = y/10 
+
+print("\nCalculo Underflow")
+print("El ultimo valor valido (distinto de 0.0) es ", ultimo_valor_valido2)
+print("El valor cuando ocurre el Underflow es ", y)
+
+#Parte 3: Enteros en Python 
+#Definimos un valor entero
+n = 1 
+for i in range(1, 10000):
+    n = n * 10
+
+print("\nCalculo Enteros")
+print("El entero sigue siendo finito")
+print("La cantidad de digitos:", len(str(n)))
+
